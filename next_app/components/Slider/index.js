@@ -1,7 +1,9 @@
 import React from 'react'
-import { Swiper} from 'swiper/react'
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+import { Swiper} from 'swiper/react';
+
 import ProductCard from '../ProductCard'
-import 'swiper/css'
 import styles from '../../styles/Slider.module.scss'
 
 
@@ -40,22 +42,23 @@ function Slider(props) {
             <div className={styles.swiper_block}>
                 <div className={styles.swiper}> {/**mySwiper */}
                     <div className={styles.swiper_wrapper}>
-                        <Swiper
-                            spaceBetween={1}
-                            slidesPerView={2.5}
-                            // pagination={
-                            //     el=".swiper-pagination"
-                            // }
-                            // navigation={
-                            //     nextEl='.slider-header-arrow-next',
-                            //     prevEl='.slider-header-arrow-prev'
-                            // }
+                    <Swiper
+                        // install Swiper modules
+                        modules={[Navigation, Pagination, Scrollbar, A11y]}
+                        spaceBetween={50}
+                        slidesPerView={3}
+                        navigation
+                        pagination={{ clickable: true }}
+                        scrollbar={{ draggable: true }}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
                         >
-                        </Swiper>
+                       
                         <ProductCard />
                         <ProductCard />
                         <ProductCard />
                         <ProductCard />
+                    </Swiper>
                     </div>
                 </div>
             </div>
@@ -63,4 +66,4 @@ function Slider(props) {
     )
 }
 
-export default Slider;
+export default Slider

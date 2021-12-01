@@ -1,9 +1,13 @@
-import Head from 'next/head'
 import React from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import { useRouter } from "next/router";
+
 import clsx from  'clsx'
 import styles from '../../styles/header.module.scss'
 
 export default function Header() {
+  const router = useRouter()
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +16,7 @@ export default function Header() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className={ clsx(styles.header, styles.header_home)}>
+      <header className={ clsx(styles.header,  router.pathname == '/' ?  styles.header_home : styles.essential)}>
         <div className={styles.header_logo}>
           <svg width="98" height="52" viewBox="0 0 98 52" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12.2355 14.0744C12.8017 14.0744 13.0026 13.5804 13.0392 13.5072C12.9844 13.306 12.9661 13.0133 12.9661 12.6291V4.08557C12.9661 3.6465 13.0026 3.3355 13.0757 3.13426C13.1488 2.93302 13.2766 2.80496 13.4776 2.73178C13.5872 2.69519 13.715 2.6586 13.8794 2.64031V2.25612L11.2673 2.29271L7.34009 12.2266L3.3215 2.23783H0.618089V2.64031C0.782486 2.6586 0.91035 2.69519 1.01995 2.73178C1.22088 2.80496 1.34874 2.93302 1.42181 3.13426C1.49487 3.3355 1.5314 3.6465 1.5314 4.08557V12.4644C1.5314 12.9035 1.49487 13.2328 1.42181 13.4523C1.34874 13.6719 1.20261 13.8365 1.00168 13.928C0.892084 13.9829 0.76422 14.0195 0.599823 14.0561V14.4585H3.04751V14.0561C2.82831 14.0195 2.66392 13.9829 2.53605 13.928C2.29859 13.8365 2.13419 13.6719 2.06113 13.4523C1.98806 13.2328 1.95153 12.9035 1.95153 12.4644V3.37209L6.55464 14.55H6.8469L11.2491 3.39038V12.6291C11.2491 13.0682 11.2125 13.3792 11.1395 13.5804C11.0664 13.7816 10.9386 13.9097 10.7376 13.9829C10.6463 14.0195 10.5184 14.0561 10.354 14.0744V14.4768H13.8794V14.0744H12.2355Z" fill="white"/>
@@ -36,16 +40,25 @@ export default function Header() {
             <span className={styles.header_button_item}>Menu</span>
         </buttton>
         <nav className={styles.header_nav}>
-              <a href="index.html" className={ clsx(styles.header_nav_link, styles.active)}>home</a>
-              <a href={"/essentials"} className={styles.header_nav_link}>essentials</a>
-              <a href="" className={styles.header_nav_link}>it peases</a>
-              <a href="" className={styles.header_nav_link}>custom</a>
-              </nav>
-              <div className={styles.header_title}><p>err one</p>
-              <p>deserves</p>
-              <p>to be iced out</p>
+          <Link href="/">
+            <a className={ clsx(styles.header_nav_link, router.pathname == '/' ? styles.active : '')}>home</a>
+          </Link>
+          <Link href={"/essentials"}>
+            <a className={clsx(styles.header_nav_link, router.pathname == '/essentials' ? styles.active : '')}>essentials</a>
+          </Link>
+          <a href="" className={styles.header_nav_link}>it peases</a>
+          <a href="" className={styles.header_nav_link}>custom</a>
+          </nav>
+          <div className={router.pathname == '/' ? styles.header_title : styles.none_display}><p>err one</p>
+          <p>deserves</p>
+          <p>to be iced out</p>
           </div>
-          <form className={styles.header_form}>
+
+          <div className={router.pathname == '/' ? styles.none_display : styles.header_title}><p>the essential</p>
+                <p>line</p>
+        </div>
+
+          <form className={styles.header_form, router.pathname == '/essentials' ? styles.none_display : styles.header_form}>
               <div className={styles.slide_submit}>
               </div>
               <button type="submit" className={styles.submit_btn}>
@@ -54,8 +67,7 @@ export default function Header() {
                     </svg>
                   <p>swipe left</p>
                 </button> 
-               
-            </form>
+          </form>
           <div className={styles.header_footer}>
               <div className={styles.header_social}>
                   <a className={styles.header_social_link} href="">instagram</a>

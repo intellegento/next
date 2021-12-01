@@ -4,7 +4,7 @@ import styles from '../../styles/Footer.module.scss'
 
 export default function Footer() {
     return (
-        <div className={styles.footer}>
+        <footer className={styles.footer}>
             <div className={styles.footer_title}>
                 <h3>Didn’t find what <br />your looking <br />for?</h3>
             </div>
@@ -19,6 +19,6 @@ export default function Footer() {
                 </button>
 
             </form>
-        </div>
+        </footer>
     )
 }
