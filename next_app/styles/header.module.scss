@@ -119,6 +119,8 @@
         left: 3.125vw;
         position: absolute;
         white-space: pre-line;
+        opacity: .9;
+        text-shadow: #6e6e6e 1px 5px 3px ;
           
           #Title #Letter {
             display: inline-block;
@@ -168,6 +170,8 @@
         position: relative;
         
       }
+
+
       .submit_btn {
         position: absolute;
         top: 0;
@@ -186,6 +190,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);  
         p {
             font-family: trap;
             font-size: 1.125rem;
@@ -195,15 +202,13 @@
             padding-left: 10px;
         }
       }
-        // .submit-btn.submitted {
-        //   width: 97%;
-        //   opacity: 0.8;
-        // }
-        // .submit-btn.submitted {
-        //   display: none;
-        // }
+        .submit_btn:active {
+            -webkit-transform: translateX(0);
+            -ms-transform: translateX(0);
+            transform: translateX(calc((-40.625vw) + 260px));  
+        }
       
-    }  
+    } 
     
 }
 

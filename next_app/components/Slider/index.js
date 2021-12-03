@@ -1,14 +1,21 @@
-import React from 'react'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
-import { Swiper} from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 import ProductCard from '../ProductCard'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 import styles from '../../styles/Slider.module.scss'
+
+
 
 
 function Slider(props) {
     return (
+
         <div className={styles.section}>
             <div className={styles.slider_header}>
                 <div className={styles.slider_header_title}>
@@ -17,7 +24,7 @@ function Slider(props) {
                 <div className={styles.slider_header_btns}>
                     <button className={styles.slider_header_btn_see_all}>See All</button>
                     <div className={styles.slider_header_arrow_btns}>
-                        <button className={styles.slider_header_arrow_prev}>
+                        <button id="prev" className={styles.slider_header_arrow_prev}>
                             <svg width="19" height="18" viewBox="0 0 19 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -25,7 +32,7 @@ function Slider(props) {
                                     stroke="#fff" strokeWidth="2" />
                             </svg>
                         </button>
-                        <button className={styles.slider_header_arrow_next}>
+                        <button id="next" className={styles.slider_header_arrow_next}>
                             <svg width="19" height="18" xmlns="http://www.w3.org/2000/svg">
                                 <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1" />
                                 <path transform="rotate(-180 9.999679565429688,9.00012493133545) " stroke="#fff"
@@ -45,19 +52,42 @@ function Slider(props) {
                     <Swiper
                         // install Swiper modules
                         modules={[Navigation, Pagination, Scrollbar, A11y]}
-                        spaceBetween={50}
-                        slidesPerView={3}
-                        navigation
-                        pagination={{ clickable: true }}
-                        scrollbar={{ draggable: true }}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
+                        spaceBetween={1}
+                        slidesPerView={2.5}
+                        breakpoints = {// настройки для разных разрешений
+                            {
+                                1100: {
+                                    slidesPerView: 2.5, 
+                                },
+                                768: {
+                                    slidesPerView: 1.5,
+                                },
+                                576: {
+                                    slidesPerView: 1,
+                                }
+                            }
+                        }
+                        navigation={{
+                            nextEl: '#next',
+                            prevEl: '#prev',
+                        }}
+                        
                         >
-                       
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
+                            <SwiperSlide>
+                                <ProductCard/>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <ProductCard/>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <ProductCard/>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <ProductCard/>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <ProductCard/>
+                            </SwiperSlide>
                     </Swiper>
                     </div>
                 </div>
@@ -66,4 +96,7 @@ function Slider(props) {
     )
 }
 
+
+
 export default Slider
+

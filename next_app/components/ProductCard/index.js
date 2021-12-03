@@ -5,7 +5,6 @@ import styles from '../../styles/Slider.module.scss'
 
 function ProductCard(props) {
     return (
-        <SwiperSlide>
             <div className={styles.swiper_slide}>
                 <div className={styles.swiper_slide_item}>
                     <div className={styles.swiper_slide_title}>
@@ -19,9 +18,8 @@ function ProductCard(props) {
                     </div>
                 </div>
             </div>
-        </SwiperSlide>
 
     )
 }
 
-export default ProductCard;
+export default ProductCard

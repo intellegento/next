@@ -1,13 +1,36 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"
+import gsap from 'gsap';
+import SplitText from '../../gsap/SplitText';
 
 import clsx from  'clsx'
 import styles from '../../styles/header.module.scss'
 
 export default function Header() {
   const router = useRouter()
+  const textContainerRef = React.useRef()
+  const essentialsContRef = React.useRef()
+
+  React.useEffect(() => {
+    const words = Array.from(textContainerRef.current.children);
+    const mySplitText = new SplitText(words, {type:"words"});
+    const splitTextTimeline = gsap.timeline();
+
+    mySplitText.split({type:"chars, words"}) 
+    splitTextTimeline.from(mySplitText.chars, {duration: 0.6, scale:5, autoAlpha:0,  rotationX:-180,  transformOrigin:"150% 50%", ease:"back", stagger: 0.1});
+  }, [])
+
+  React.useEffect(() => {
+    const words = Array.from(essentialsContRef.current.children);
+    const mySplitText = new SplitText(words, {type:"words"});
+    const splitTextTimeline = gsap.timeline();
+
+    mySplitText.split({type:"chars, words"}) 
+    splitTextTimeline.from(mySplitText.chars, {duration: 0.6, scale:5, autoAlpha:0,  rotationX:-180,  transformOrigin:"150% 50%", ease:"back", stagger: 0.1});
+  }, [])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -49,25 +72,29 @@ export default function Header() {
           <a href="" className={styles.header_nav_link}>it peases</a>
           <a href="" className={styles.header_nav_link}>custom</a>
           </nav>
-          <div className={router.pathname == '/' ? styles.header_title : styles.none_display}><p>err one</p>
-          <p>deserves</p>
-          <p>to be iced out</p>
-          </div>
-
-          <div className={router.pathname == '/' ? styles.none_display : styles.header_title}><p>the essential</p>
-                <p>line</p>
-        </div>
-
           <form className={styles.header_form, router.pathname == '/essentials' ? styles.none_display : styles.header_form}>
               <div className={styles.slide_submit}>
               </div>
-              <button type="submit" className={styles.submit_btn}>
+              <div  className={styles.submit_btn}>
                     <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 9L22 9M2 9L8.92308 1M2 9L8.92308 17" stroke="#5A6B6F" strokeWidth="1.6"/>
                     </svg>
                   <p>swipe left</p>
-                </button> 
+                </div> 
           </form>
+
+          <div ref={textContainerRef} className={router.pathname == '/' ? styles.header_title : styles.none_display}>
+            <p>err one</p>
+          <p>deserves</p>
+          <p>to be iced out</p>
+          </div>
+
+          <div ref={essentialsContRef} className={router.pathname == '/' ? styles.none_display : styles.header_title}><p>the essential</p>
+                <p>line</p>
+        </div>
+
+
+          
           <div className={styles.header_footer}>
               <div className={styles.header_social}>
                   <a className={styles.header_social_link} href="">instagram</a>
