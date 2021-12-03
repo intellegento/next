@@ -1,8 +1,5 @@
 import React from 'react'
 import styles from '../../styles/Footer.module.scss'
-import { useRouter } from "next/router"
-import gsap from 'gsap';
-import SplitText from '../../gsap/SplitText';
 
 
 

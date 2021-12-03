@@ -60,7 +60,7 @@ function Slider(props) {
                                     slidesPerView: 2.5, 
                                 },
                                 768: {
-                                    slidesPerView: 1.5,
+                                    slidesPerView: 2.5,
                                 },
                                 576: {
                                     slidesPerView: 1,
@@ -91,6 +91,9 @@ function Slider(props) {
                     </Swiper>
                     </div>
                 </div>
+            </div>
+            <div className={styles.slider_footer}>
+
             </div>
         </div>
     )
