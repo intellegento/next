@@ -63,6 +63,9 @@ function Slider(props) {
                                     slidesPerView: 2.5,
                                 },
                                 576: {
+                                    slidesPerView: 1.5,
+                                },
+                                1: {
                                     slidesPerView: 1,
                                 }
                             }

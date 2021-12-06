@@ -1,12 +1,16 @@
 
-
+.section{
+    overflow: hidden;
+}
 .slider_header {
     display: flex;
     justify-content: space-between;
-    margin: 0 2.5vw 2vh 2.5vw;
+    margin: 2vh 2.5vw 2vh 2.5vw;
+    padding-bottom: 2vh;
     height: 46px;
     align-items: center;
     border-bottom: 1px solid #000;
+    
 
 
     .slider_header_title {
@@ -66,7 +70,6 @@
                 border-radius: 50%;
                 border: 1px solid #000;
                 background-color: #fff;
-                margin-right: 0.625vw;
                 transition: all .2s linear;
 
                 &:hover {
@@ -83,11 +86,10 @@
 }
 .slider_footer {
     border-top: 1px solid #000;
+    margin-left: 2.5vw;
 }
 .swiper_block {
-      padding: 0 2.5vw 0 2.5vw;
-      padding: 2.96vh 0;
-      margin-bottom: 50px;
+      padding: 0 0 2vh 2.5vw;
 
       .swiper {
         width: 100vw;
@@ -110,6 +112,7 @@
                 // top: 0; bottom: 0; left: 0; right: 0;
 
                 .swiper_slide_item {
+                    width: 100%;
                     height: calc(0.4 * 150vw);
                     background-color: #F1F1F1;
                     border-right: 1px solid #000;
@@ -123,6 +126,7 @@
                         text-align: left;
                         font-size: 32px;
                         color: #000;
+                        margin-bottom: 2vh;
                     }
 
                     .swiper_slide_card_item {
@@ -146,6 +150,7 @@
                     }
 
                     .slider_card_descr {
+                        margin-top: 2vh;
                         text-align: left;
                       font-family: trap;
                       font-size: 18px;
@@ -194,18 +199,20 @@
             .swiper_slide {
 
                 .swiper_slide_item {
-                    height: 650px;
                     width: 100%;
-                    background-color: #F1F1F1;
-                    border-right: 1px solid #000;
-                    padding: 42px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
+                    height: calc(0.4 * 200vw);
+
+                    .swiper_slide_title {
+                        font-size: 22px;
+                        color: #000;
+                    }
 
                     .swiper_slide_card_item {
-                        height: 500px;
+                        height: 80vh;
                         width: 60%;
+                    }
+                    .slider_card_descr {
+                      font-size: 14px;
                     }
                   
                 }
@@ -262,9 +269,12 @@
                 .swiper_slide {
     
                     .swiper_slide_item {
-                        height: 550px;
+                        height: 600px;
                         border-right: none;
                         padding: 32px;
+                        .swiper_slide_title {
+                            font-size: 32px;
+                        }
     
                         .swiper_slide_card_item {
                             height: 400px;
@@ -273,7 +283,12 @@
                             img {
                                 border-radius: 220px;
                             }
+                           
                         }
+                        .slider_card_descr {
+                            font-size: 18px;
+                            margin-bottom: 2vh;
+                          }
                       
                     }
                   }

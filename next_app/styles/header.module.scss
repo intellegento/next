@@ -9,16 +9,13 @@
 
 .essential {
     background: url(../public/images/essentials.jpg) no-repeat #000;
-    max-height: 1080px;
-    margin-bottom: 9.25vh;
-    touch-action: none;
+    margin-bottom: 5.25vh;
 }
 
 .header {
     height: 100vh;
     width: 100vw;
     position: relative;
-    touch-action: none;
     
     .header_logo {
         text-align: center;
@@ -158,7 +155,6 @@
         top: 43.5vh;
         right: 3.125vw;
         width: 40.625vw;
-        touch-action: none;
       
       
       .slide_submit {
@@ -214,139 +210,155 @@
 
 
 @media (max-width: 1681px) {
-    .header-nav {
-        height: 40px !important;
-        line-height: 40px !important;
-
-        .header-nav-link {
-            font-size: 19px !important;
-        }
-        .header-nav-link:not(:last-child)::before { 
-            height: 28px !important;
-           
-        }
-    }
-
-    .header-title {
-        font-size: 150px !important;
-        }
-    
-        .header-form {
-          
-          .slide-submit {
-            height: 240px !important;
-            border-radius: 120px !important;
+    .header {
+         .header_title {
+            font-size: 170px;
+            line-height: 170px;
             
-          }
-          .submit-btn {
-              height: 240px !important;
-              width: 240px !important;
-              border-radius: 120px !important;
-          }
         }
-            
-    
+        
+    } 
 }
 
 @media (max-width: 1445px) {
-    .header-title {
-        font-size: 12vh !important;
-        
+    .header {
+         .header_title {
+            font-size: 130px;
+            line-height: 130px;
+         }
     }
-    .header-form{
-        width: 40.625vw !important;
-      
-      .slide-submit {
-        width: 40.625vw !important;
-        height: 180px !important;
-        border-radius: 90px;
-        
-      }
-      .submit-btn {
-        width: 180px !important;
-        height: 180px !important;
-        border-radius: 90px !important;
-        
-      }
-      
-    }  
 }
 
 
 
 @media (max-width: 1024px) {
-    .header-nav {
-        height: 36px !important;
-        line-height: 36px !important;
-
-        .header-nav-link {
-            font-size: 16px !important;
+    .header {
+         .header_title {
+            font-size: 120px;
+            line-height: 120px;
+              
+            
         }
-        .header-nav-link:not(:last-child)::before { 
-            height: 24px !important;
-           
-        }
-    }
-
-    .header-title {
-        line-height: 8vh;
-        font-size: 12vh !important;
+        
+        .header_form{
+            position: absolute;
+            top: 43.5vh;
+            right: 3.125vw;
+            width: 36.625vw;
+          
+          
+          .slide_submit {
+            width: 36.625vw;
+            height: 160px;
+            border-radius: 80px;
+            
+          }
+    
+    
+          .submit_btn {
+            width: 160px;
+            height: 160px;
+            border-radius: 80px;
+            
+            }
+            .submit_btn:active {
+                -webkit-transform: translateX(0);
+                -ms-transform: translateX(0);
+                transform: translateX(calc((-36.625vw) + 160px));  
+            }
+          
+        } 
         
     }
-   
 }
 
 
 
 @media (max-width: 769px) {
-
-    .essential {
-        margin-bottom: 5vh;
-    }
-
-    .header-title {
-        font-size: 12vh !important;
-        top: 25vh !important;
-    }
-    
-    .header-form {
-         top: 75vh !important;
-         width: 90vw !important;
-
-        .slide-submit {
-            width: 90vw !important;;
-          height: 80px !important;
-          border-radius: 90px !important;
-          
+    .header {
+        .header_nav {
+            
+         }
+         .header_title {
+            font-size: 90px;
+            line-height: 90px;
+            top: 38.5vh;
         }
-        .submit-btn {
-            margin: 0 auto !important;
-            height: 80px !important;
-            width: 160px !important;
-            border-radius: 90px !important;
-        }
-      }
-
         
+        .header_form{
+            top: 70vh;
+            right: 3.125vw;
+            width: 80.625vw;
+          
+          
+          .slide_submit {
+            width: 80.625vw;
+            height: 260px;
+            border-radius: 130px;
+            
+          }
+          .submit_btn {
+            width: 260px;
+            height: 260px;
+            border-radius: 130px;
+            
+            }
+            .submit_btn:active {
+                -webkit-transform: translateX(0);
+                -ms-transform: translateX(0);
+                transform: translateX(calc((-80.625vw) + 260px));  
+            }
+        } 
+        
+    }
 }
 
 
 @media (max-width: 576px) {
 
-    .header-nav {
-        height: 30px !important;
-        line-height: 30px !important;
+
+    .header {
         
-        .header-nav-link {
-            font-size: 16px !important;
+    
+        .header_nav {
+            
+            .header_nav_link {
+                font-size: 20px;
+            }
+         }
+         .header_title {
+            font-size: 56px;
+            line-height: 56px;
+            top: 23.5vh;
+            
         }
-        .header-nav-link:not(:last-child)::before { 
-            height: 20px !important;
-            top: 5px !important;
-        }
-    }
-    .header-form {
-        top: 68vh !important;
+       
+        .header_form{
+            position: absolute;
+            top: 53.5vh;
+            right: 3.125vw;
+            width: 80.625vw;
+          
+          
+          .slide_submit {
+            width: 80.625vw;
+            height: 160px;
+            border-radius: 80px;
+            
+          }
+    
+    
+          .submit_btn {
+           
+          }
+            .submit_btn:active {
+                -webkit-transform: translateX(0);
+                -ms-transform: translateX(0);
+                transform: translateX(calc((-80.625vw) + 160px));  
+            }
+          
+        } 
+        
     }
 }
 
