@@ -44,6 +44,14 @@
             margin: 0;
             padding: 0;
           }
+
+          .logo_toggle {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 30px;
+
+          }
         
           li {
             list-style: none;
@@ -91,7 +99,7 @@
             height: 100vh;
             z-index: 9;
             margin: -50px 0 0 -100px;
-            padding-top: 100px;
+            padding-top: 15px;
             background: #e9e8e8;
             list-style-type: none;
             
@@ -324,16 +332,16 @@
           
           
           .slide_submit {
-            height: 20vh;
-            border-radius: 10vh;
+            height: 30vh;
+            border-radius: 15vh;
             
           }
     
     
           .submit_btn {
-            width: 20vh;
-            height: 20vh;
-            border-radius: 10vh;
+            width: 30vh;
+            height: 30vh;
+            border-radius: 15vh;
             -webkit-transform: translateX(0);
             -ms-transform: translateX(0);
             transform: translateX(0);  
@@ -373,9 +381,36 @@
 @media (max-width: 1445px) {
     .header {
          .header_title {
-            font-size: 130px;
-            line-height: 130px;
+            font-size: 120px;
+            line-height: 120px;
          }
+         .header_form{
+            top: 43.5vh;
+            right: 3.125vw;
+            width: 36.625vw;
+          
+          
+          .slide_submit {
+            width: 36.625vw;
+            height: 180px;
+            border-radius: 80px;
+            
+          }
+    
+    
+          .submit_btn {
+            width: 180px;
+            height: 180px;
+            border-radius: 80px;
+            
+            }
+            .submit_btn:active {
+                -webkit-transform: translateX(0);
+                -ms-transform: translateX(0);
+                transform: translateX(calc((-36.625vw) + 180px));  
+            }
+          
+        } 
     }
 }
 
@@ -384,8 +419,8 @@
 @media (max-width: 1024px) {
     .header {
          .header_title {
-            font-size: 120px;
-            line-height: 120px;
+            font-size: 100px;
+            line-height: 100px;
               
             
         }

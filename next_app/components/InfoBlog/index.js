@@ -5,7 +5,7 @@ export default function InfoBlog() {
   return ( 
     <div className={styles.section}>
         <div className={styles.cover}>
-            <div className={styles.content_cover}>
+            <div className={styles.content_cover, styles.cover_for_title}>
                 <img src='/images/cover1.jpg' alt="cover"/>
                 <div className={styles.cover_title_text}>
                     <p>Our everyday <br/>basic collection</p>
