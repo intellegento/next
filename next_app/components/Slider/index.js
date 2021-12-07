@@ -56,11 +56,14 @@ function Slider(props) {
                         slidesPerView={2.5}
                         breakpoints = {// настройки для разных разрешений
                             {
+                                2000: {
+                                    slidesPerView: 4.5, 
+                                },
                                 1100: {
                                     slidesPerView: 2.5, 
                                 },
                                 768: {
-                                    slidesPerView: 2.5,
+                                    slidesPerView: 1.8,
                                 },
                                 576: {
                                     slidesPerView: 1.5,

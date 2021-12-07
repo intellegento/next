@@ -106,6 +106,7 @@
     
         .footer_title {
           font-size: 100px;
+          line-height: 100px;
           left: 480px;
           top: 60px;
         }
@@ -144,11 +145,12 @@
 
 @media (max-width: 1024px) {
     .footer {
-        height: 100vw;
+        height: 50vh;
         width: 100%;
     
         .footer_title {
-          font-size: 65px;
+          font-size: 55px;
+          line-height: 55px;
           left: 30vw;
         }
     
@@ -160,11 +162,11 @@
         .footer_img_front {
             top: 25vh;
             width: 60vw;
-            height: 45vw;
+            height: 40vw;
       }
         .footer_form {
             position: absolute;
-            top: 35vh;
+            top: 30vh;
             left: 1.46vw;
             width: 70vw;
         
@@ -192,11 +194,11 @@
 
 @media (max-width: 769px) {
     .footer {
-        height: 100vw;
+        height: 50vw;
         width: 100%;
     
         .footer_title {
-          font-size: 40px;
+          font-size: 30px;
         }
     
         .footer_img_back {
@@ -212,7 +214,7 @@
       }
         .footer_form {
             position: absolute;
-            top: 20vh;
+            top: 30vh;
             left: 1.46vw;
             width: 70vw;
         
@@ -240,11 +242,12 @@
 
 @media (max-width: 576px) {
     .footer {
-        height: 100vw;
+        height: 50vw;
         width: 100%;
     
         .footer_title {
-          font-size: 35px;
+          font-size: 20px;
+          line-height: 20px;
         }
     
         .footer_img_back {
@@ -259,21 +262,24 @@
       }
         .footer_form {
             position: absolute;
-            top: 20vh;
+            top: 40vh;
             left: 1.46vw;
             width: 70vw;
         
         
             .footer_slide_submit {
                 width: 70vw;
-                height: 60px;
+                height: 40px;
                 
                 
             }
             .footer_submit_btn {
-                width: 160px;
-                height: 60px;
+                width: 100px;
+                height: 40px;
                 border-radius: 30px;
+                p {
+                    font-size: 12px;
+                }
                
             }
             .footer_submit_btn:active {
@@ -283,4 +289,54 @@
             }
         }
     }
+}
+
+
+
+@media (max-width: 480px){
+    .footer {
+        height: 263px;
+        .footer_title {
+          font-size: 22px;
+          left: 28.2vw;
+          top: 5.55vh;
+          z-index: 2;
+        }
+    
+        .footer_img_back {
+            width: 70vw;
+            height: 54vw;
+           
+            top: 10.8vh;
+        }
+    
+        .footer_img_front {
+            width: 41.98vw;
+            height: 26.1vw;
+      }
+        .footer_form {
+            position: absolute;
+            top: 20vh;
+            left: 1.46vw;
+            width: 70vw;
+        
+        
+            .footer_slide_submit {
+                width: 70vw;
+                height: 60px;
+                
+            }
+            .footer_submit_btn {
+                width: 120px;
+                height: 60px;
+                p {
+                    font-size: 16px;
+                }
+            .footer_submit_btn:active {
+                -webkit-transform: translateX(0);
+                -ms-transform: translateX(0);
+                transform: translateX(calc((-70vw) + 120px));  
+            }
+        }
+        }}
 }
