@@ -8,6 +8,7 @@ import SplitText from '../../gsap/SplitText';
 import clsx from  'clsx'
 import styles from '../../styles/Header.module.scss'
 
+
 export default function Header() {
   const router = useRouter()
   const textContainerRef = React.useRef()

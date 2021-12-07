@@ -1,8 +1,5 @@
-
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
-
 import ProductCard from '../ProductCard'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -11,11 +8,8 @@ import 'swiper/css/scrollbar'
 import styles from '../../styles/Slider.module.scss'
 
 
-
-
 function Slider(props) {
     return (
-
         <div className={styles.section}>
             <div className={styles.slider_header}>
                 <div className={styles.slider_header_title}>
@@ -44,8 +38,6 @@ function Slider(props) {
                     </div>
                 </div>
             </div>
-
-
             <div className={styles.swiper_block}>
                 <div className={styles.swiper}> {/**mySwiper */}
                     <div className={styles.swiper_wrapper}>
@@ -77,7 +69,6 @@ function Slider(props) {
                             nextEl: '#next',
                             prevEl: '#prev',
                         }}
-                        
                         >
                             <SwiperSlide>
                                 <ProductCard/>
@@ -104,8 +95,5 @@ function Slider(props) {
         </div>
     )
 }
-
-
-
 export default Slider
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../../styles/Cover.module.scss'
 
+
 export default function InfoBlog() {
   return ( 
     <div className={styles.section}>
