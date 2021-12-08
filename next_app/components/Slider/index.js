@@ -32,7 +32,6 @@ function Slider(props) {
                                 <path transform="rotate(-180 9.999679565429688,9.00012493133545) " stroke="#fff"
                                     id="svg_1" strokeWidth="2"
                                     d="m18.3997,9.00011l-16.80004,0m0,0l7.63636,7.46669m-7.63636,-7.46669l7.63636,-7.46666" />
-
                             </svg>
                         </button>
                     </div>
@@ -41,51 +40,51 @@ function Slider(props) {
             <div className={styles.swiper_block}>
                 <div className={styles.swiper}> {/**mySwiper */}
                     <div className={styles.swiper_wrapper}>
-                    <Swiper
-                        // install Swiper modules
-                        modules={[Navigation, Pagination, Scrollbar, A11y]}
-                        spaceBetween={1}
-                        slidesPerView={2.5}
-                        breakpoints = {// настройки для разных разрешений
-                            {
-                                2000: {
-                                    slidesPerView: 4.5, 
-                                },
-                                1100: {
-                                    slidesPerView: 2.5, 
-                                },
-                                768: {
-                                    slidesPerView: 1.8,
-                                },
-                                576: {
-                                    slidesPerView: 1.5,
-                                },
-                                1: {
-                                    slidesPerView: 1,
+                        <Swiper
+                            // install Swiper modules
+                            modules={[Navigation, Pagination, Scrollbar, A11y]}
+                            spaceBetween={1}
+                            slidesPerView={2.5}
+                            breakpoints={// настройки для разных разрешений
+                                {
+                                    2000: {
+                                        slidesPerView: 4.5,
+                                    },
+                                    1100: {
+                                        slidesPerView: 2.5,
+                                    },
+                                    768: {
+                                        slidesPerView: 1.8,
+                                    },
+                                    576: {
+                                        slidesPerView: 1.5,
+                                    },
+                                    1: {
+                                        slidesPerView: 1,
+                                    }
                                 }
                             }
-                        }
-                        navigation={{
-                            nextEl: '#next',
-                            prevEl: '#prev',
-                        }}
+                            navigation={{
+                                nextEl: '#next',
+                                prevEl: '#prev',
+                            }}
                         >
                             <SwiperSlide>
-                                <ProductCard/>
+                                <ProductCard />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <ProductCard/>
+                                <ProductCard />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <ProductCard/>
+                                <ProductCard />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <ProductCard/>
+                                <ProductCard />
                             </SwiperSlide>
                             <SwiperSlide>
-                                <ProductCard/>
+                                <ProductCard />
                             </SwiperSlide>
-                    </Swiper>
+                        </Swiper>
                     </div>
                 </div>
             </div>

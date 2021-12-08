@@ -89,17 +89,10 @@
         margin-bottom: 9vh;
     }
     .cover_for_title {
-        position: relative;
 
         .cover_title_text {
-            font-family: trap;
-            color: #fff;
             font-size: 14vh;
             line-height: 14vh;
-            text-transform: uppercase;
-            mix-blend-mode: difference;
-            position: absolute;
-            z-index: 5;
             top: 80%;
             width: 80vw;
             left: 8.5vw;
@@ -112,9 +105,6 @@
 
     .content_cover{
         width: 45%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
 
         &:nth-child(even) {
             justify-content: end;
@@ -136,17 +126,10 @@
     .cover {
         margin-bottom: 190px;
         .cover_for_title {
-            position: relative;
     
             .cover_title_text {
-                font-family: trap;
-                color: #fff;
                 font-size: 14vh;
                 line-height: 14vh;
-                text-transform: uppercase;
-                mix-blend-mode: difference;
-                position: absolute;
-                z-index: 5;
                 top: 90%;
                 width: 80vw;
                 left: 8.5vw;
@@ -168,7 +151,6 @@
             margin-bottom: 40px;
         }
         .cover_for_title {
-            position: relative;
     
             .cover_title_text {
                 font-size: 80px;
