@@ -8,28 +8,25 @@ import clsx from 'clsx'
 import styles from '../../styles/Header.module.scss'
 
 
-export default function Header() {
+export default function Header({children}) {
   const router = useRouter()
   const textContainerRef = React.useRef()
-  const essentialsContRef = React.useRef()
+  
+
+  const startTitleAnimation = (elementRef) => {
+    
+      const words = Array.from(elementRef.current.children);
+      const mySplitText = new SplitText(words, { type: "words" });
+      const splitTextTimeline = gsap.timeline();
+  
+      mySplitText.split({ type: "chars, words" })
+      splitTextTimeline.from(mySplitText.chars, { duration: 0.6, scale: 5, autoAlpha: 0, rotationX: -180, transformOrigin: "150% 50%", ease: "back", stagger: 0.1 });
+     
+  }
 
   React.useEffect(() => {
-    const words = Array.from(textContainerRef.current.children);
-    const mySplitText = new SplitText(words, { type: "words" });
-    const splitTextTimeline = gsap.timeline();
-
-    mySplitText.split({ type: "chars, words" })
-    splitTextTimeline.from(mySplitText.chars, { duration: 0.6, scale: 5, autoAlpha: 0, rotationX: -180, transformOrigin: "150% 50%", ease: "back", stagger: 0.1 });
-  }, [])
-
-  React.useEffect(() => {
-    const words = Array.from(essentialsContRef.current.children);
-    const mySplitText = new SplitText(words, { type: "words" });
-    const splitTextTimeline = gsap.timeline();
-
-    mySplitText.split({ type: "chars, words" })
-    splitTextTimeline.from(mySplitText.chars, { duration: 0.6, scale: 5, autoAlpha: 0, rotationX: -180, transformOrigin: "150% 50%", ease: "back", stagger: 0.1 });
-  }, [])
+    startTitleAnimation(textContainerRef)
+  },[])
 
   return (
     <div className={styles.container}>
@@ -61,7 +58,7 @@ export default function Header() {
         </div>
 
         <nav className={styles.nav_toggle}>
-          <label for="a">
+          <label htmlFor="a">
             <div></div>
             <div></div>
             <div></div>
@@ -125,14 +122,8 @@ export default function Header() {
           </div>
         </form>
 
-        <div ref={textContainerRef} className={router.pathname == '/' ? styles.header_title : styles.none_display}>
-          <p>err one</p>
-          <p>deserves</p>
-          <p>to be iced out</p>
-        </div>
-
-        <div ref={essentialsContRef} className={router.pathname == '/' ? styles.none_display : styles.header_title}><p>the essential</p>
-          <p>line</p>
+        <div ref={textContainerRef} className={styles.header_title}>
+          {children}
         </div>
 
         <div className={styles.header_footer}>

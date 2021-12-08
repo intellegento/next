@@ -1,3 +1,4 @@
+
 .footer {
     background-color: #fff;
     height: 100vh;
@@ -42,7 +43,6 @@
         left: 1.46vw;
         width: 70vw;
     
-    
         .footer_slide_submit {
             width: 70vw;
             height: 260px;
@@ -70,9 +70,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            -webkit-transform: translateX(0);
-            -ms-transform: translateX(0);
-            transform: translateX(0); 
+            transform: translateX(0);
+            
             p {
                 font-family: trap;
                 font-size: 1.125rem;

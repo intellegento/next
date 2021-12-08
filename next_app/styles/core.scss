@@ -11,6 +11,10 @@ body {
   font-family: trap;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 /* Указываем box sizing */
 *,
 *::before,

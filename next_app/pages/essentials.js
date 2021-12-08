@@ -8,7 +8,10 @@ import Footer from '../components/Footer/index'
 export default function Essentials() {
   return (
     <>
-      <Header />
+      <Header>
+        <p>the essential</p>
+        <p>line</p>
+      </Header>
       <InfoBlog />
       <Slider />
       <Footer />
