@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from '../../styles/Cover.module.scss'
 
-
 export default function InfoBlog() {
     return (
         <div className={styles.section}>
@@ -27,7 +26,7 @@ export default function InfoBlog() {
                 </div>
                 <div className={styles.content_cover}>
                     <div className={styles.content_background}>
-                        <img src="/images/cover2.jpg" alt="cover" />
+                        <img src='/images/cover2.jpg' alt="cover" />
                     </div>
                 </div>
             </div>

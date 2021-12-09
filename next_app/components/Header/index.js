@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from "next/router"
-import gsap from 'gsap'
+import { gsap } from 'gsap'
 import SplitText from '../../gsap/SplitText'
 import clsx from 'clsx'
 import styles from '../../styles/Header.module.scss'
@@ -12,7 +12,6 @@ export default function Header({children}) {
   const router = useRouter()
   const textContainerRef = React.useRef()
   
-
   const startTitleAnimation = (elementRef) => {
     
       const words = Array.from(elementRef.current.children);
